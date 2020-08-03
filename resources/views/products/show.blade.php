@@ -6,6 +6,6 @@
 
 @section('product_content')
 
-<product-particulars :product={{ $product }} route={{ route('purchase_cart.store') }}></product-particulars>
+<product-show :product={{ $product }} route={{ route('purchase_cart.store') }}></product-show>
 
 @endsection

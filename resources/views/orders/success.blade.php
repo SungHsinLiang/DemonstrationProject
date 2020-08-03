@@ -5,10 +5,10 @@
 @section('main_content')
 
 <div class="container">
-    <div class="row my-5">
+  <div class="row my-5">
 
-        <h1 class="m-auto">Place an order successfully</h1>
-    </div>
+    <h1 class="m-auto">訂單下定成功!</h1>
+  </div>
 </div>
 
 @endsection

@@ -28,20 +28,20 @@ export default {
 
     axios
       .get(this.$props["purchase_list"], {
-        timeout: 5000
+        timeout: 5000,
       })
-      .then(res => {
+      .then((res) => {
         this.$data["purchase_lists"] = res.data["purchase_lists"];
         updatePurchaseCart(this.$data["purchase_lists"]);
       })
-      .catch(err => console.error(err));
+      .catch((err) => console.error(err));
   },
   data() {
     return {
-      purchase_lists: ["9999999"]
+      purchase_lists: ["9999999"],
     };
   },
-  methods: {}
+  methods: {},
 };
 
 // refresh the nav purchase cart when putting the product to the user purchase cart successfully.
@@ -49,13 +49,8 @@ function updatePurchaseCart(lists) {
   document.getElementById("purchase_lists_tbody").innerHTML = "";
 
   var text = "";
-  lists.forEach(lt => {
-    text +=
-      '<tr><th><a href="/product/' +
-      lt["id"] +
-      '">' +
-      lt["product_name"] +
-      "</a></th>";
+  lists.forEach((lt) => {
+    text += '<tr><th><a href="/product/' + lt["id"] + '">' + lt["product_name"] + "</a></th>";
     text += "<td>" + lt["purchase_quantity"] + "</td></tr>";
   });
 

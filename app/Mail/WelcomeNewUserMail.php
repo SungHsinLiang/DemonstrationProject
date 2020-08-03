@@ -9,25 +9,25 @@ use Illuminate\Queue\SerializesModels;
 
 class WelcomeNewUserMail extends Mailable
 {
-    use Queueable, SerializesModels;
+  use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+  /**
+   * Create a new message instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+    //
+  }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
-    public function build()
-    {
-        return $this->markdown('emails.new-welcome');
-    }
+  /**
+   * Build the message.
+   *
+   * @return $this
+   */
+  public function build()
+  {
+    return $this->markdown('emails.new-welcome');
+  }
 }

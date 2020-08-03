@@ -203,6 +203,12 @@ export default {
 		});
 	}
 };
+
+function chooseFileName(idname, e) {
+	var fileName = document.getElementById(idname).files[0].name;
+	var nextSibling = e.target.nextElementSibling;
+	nextSibling.innerText = fileName;
+}
 </script>
 
 <style scoped></style>

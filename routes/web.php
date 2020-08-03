@@ -1,6 +1,7 @@
 <?php
 
 use App\Carousel;
+use App\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,24 +15,32 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/', function () {
-    $carousels = Carousel::get();
-    return view('index', compact('carousels'));
+  $carousels = Carousel::get();
+  $products = Product::where([
+    ['quantity', '>', '0'],
+    'is_sold' => '1',
+  ])->inRandomOrder()->take(9)->get();
+  return view('index', compact('carousels', 'products'));
 })->name('home');
 
-// Route::resource('men', 'MenController')->middleware('auth');
-Route::get('men/tops/oxfords', 'MenController@showOxfords')->name('men.tops.oxfords');
-Route::get('men/tops/businesses', 'MenController@showBusinesses')->name('men.tops.businesses');
-Route::get('men/tops/casuals', 'MenController@showCasuals')->name('men.tops.casuals');
 Route::get('men/categories', 'MenController@getAllcategories')->name('men.getCategories');
+Route::get('men/search', 'MenController@search')->name('men.search');
 Route::resource('men', 'MenController');
 
-// Route::resource('product', 'ProductController')->middleware('can:viewAny,App\Product');
-Route::get('product/men/tops/create', 'ProductController@createMenTops')->name('product.men.tops.create');
-Route::post('product/men/tops/create', 'ProductController@storeMenTops')->name('product.men.tops.store');
+Route::get('women/categories', 'WomenController@getAllcategories')->name('women.getCategories');
+Route::get('women/search', 'WomenController@search')->name('women.search');
+Route::resource('women', 'WomenController');
+
+Route::get('product/categories/create', 'ProductController@createCategories')->name('product.categories.create');
+Route::post('product/categories/create', 'ProductController@storeCategories')->name('product.categories.store');
+Route::get('product/styles/create', 'ProductController@createStyles')->name('product.styles.create');
+Route::post('product/styles/create', 'ProductController@storeStyles')->name('product.styles.store');
+Route::get('product/create/{search}', 'ProductController@showSearch')->name('product.showSearch');
 Route::resource('product', 'ProductController');
+
 
 Route::get('purchase_list.{user_id}', 'PurchaseCartController@getPurchaseList')->name('purchase_list');
 Route::resource('purchase_cart', 'PurchaseCartController');
@@ -45,3 +54,9 @@ Route::post('administrators/carousel', 'administratorsController@setCarousel')->
 Route::resource('administrators', 'administratorsController');
 
 Route::resource('carousel', 'CarouselController');
+
+// use App\Mail\WelcomeNewUserMail;
+
+Route::get('email', function () {
+  return new App\Mail\PlaceAnOrderSuccessfully();
+});

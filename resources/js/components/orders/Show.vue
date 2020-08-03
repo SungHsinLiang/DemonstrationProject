@@ -25,18 +25,17 @@ export default {
     var text = "";
     var quantity = 0;
     var total_price = 0;
-    JSON.parse(this.order_lists).forEach(element => {
+    JSON.parse(this.order_lists).forEach((element) => {
       console.log(element["id"]);
       quantity += parseInt(element["purchase_quantity"]);
-      total_price +=
-        parseInt(element["purchase_quantity"]) * parseInt(element["price"]);
+      total_price += parseInt(element["purchase_quantity"]) * parseInt(element["price"]);
 
       text += "<tr><td>" + element["id"] + "</td>";
       text +=
         "<td><a href='http://127.0.0.1:8000/product/" +
         element["id"] +
         "'><img src=" +
-        element["img_main_thumbnail"] +
+        element["imgs"] +
         " alt style='width: 40%' /></a></td>";
       text +=
         "<td><a href='http://127.0.0.1:8000/product/" +
@@ -61,9 +60,8 @@ export default {
     text += "<td>" + total_price + "</td></tr>";
 
     document.getElementById("order_particulars_tbody").innerHTML = text;
-  }
+  },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
