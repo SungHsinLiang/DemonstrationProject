@@ -49,9 +49,9 @@ Route::get('orders/success', 'OrdersController@success')->name('orders.success')
 Route::get('orders/lists', 'OrdersController@getLists')->name('orders.lists');
 Route::resource('orders', 'OrdersController');
 
-Route::get('administrators/carousel', 'administratorsController@getCarousel')->name('administrators.getCarousel');
-Route::post('administrators/carousel', 'administratorsController@setCarousel')->name('administrators.setCarousel');
-Route::resource('administrators', 'administratorsController');
+Route::get('administrators/carousel', 'AdministratorsController@getCarousel')->name('administrators.getCarousel');
+Route::post('administrators/carousel', 'AdministratorsController@setCarousel')->name('administrators.setCarousel');
+Route::resource('administrators', 'AdministratorsController');
 
 Route::resource('carousel', 'CarouselController');
 
