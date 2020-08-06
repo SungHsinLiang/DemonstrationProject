@@ -17,6 +17,7 @@ class CarouselController extends Controller
   {
     $this->authorize('viewAny', Product::class);
 
+    // dd(route('carousel.store'));
     $carousel_store_route = route('carousel.store');
     $carousel_data = Carousel::get();
     return view('carousel.index', compact('carousel_data', 'carousel_store_route'));
