@@ -7,7 +7,7 @@
 
 					<div class="card-body">
 						<form
-							:action="carousel_store_route"
+							:action="this.carousel_store_route"
 							method="POST"
 							enctype="multipart/form-data"
 						>
@@ -161,7 +161,7 @@
 
 <script>
 export default {
-	props: ["carousel_data", "carousel_store_route"],
+	props: ["carousel_store_route", "carousel_data"],
 	data() {
 		return {
 			csrf: ""
