@@ -446,7 +446,7 @@ export default {
 					transport_method: this.picked
 				})
 				.then(res => {
-					console.log(res);
+					 console.log(res.data["place_the_order_successfully_route"]);
 					// window.location = res.data["place_the_order_successfully_route"];
 				})
 				.catch(err => {
