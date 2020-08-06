@@ -446,8 +446,8 @@ export default {
 					transport_method: this.picked
 				})
 				.then(res => {
-					console.log(res);
-					// window.location = res.data["place_the_order_successfully_route"];
+					// console.log(res.data["place_the_order_successfully_route"]);
+					window.location = res.data["place_the_order_successfully_route"];
 				})
 				.catch(err => {
 					if (err.response.data.message == "carts count less than 1") {
