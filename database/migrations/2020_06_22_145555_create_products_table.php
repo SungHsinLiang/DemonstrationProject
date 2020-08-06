@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
       $table->string('category');
       $table->string('style');
       $table->unsignedBigInteger('is_sold');
-      $table->string('imgs');
+      $table->text('imgs');
       $table->timestamps();
     });
   }
