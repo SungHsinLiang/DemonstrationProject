@@ -12,7 +12,7 @@ class PurchaseCartController extends Controller
 {
   public function __construct()
   {
-    $this->middleware('verified')->except('show');
+    $this->middleware('verified')->except('show', 'getPurchaseList');
   }
 
   /**
