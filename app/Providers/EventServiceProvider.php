@@ -24,7 +24,7 @@ class EventServiceProvider extends ServiceProvider
       \App\Listeners\WelcomeNewUserListener::class,
     ],
     NewOrderHasCreatedEvent::class => [
-      \App\Listeners\NotifyTheCustomerThatTheOrderHasBeenCreatedSuccessfully::class,
+	    \App\Listeners\NotifyTheCustomerThatTheOrderHasBeenCreatedSuccessfully::class,
     ]
   ];
 

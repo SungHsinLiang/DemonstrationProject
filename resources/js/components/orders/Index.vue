@@ -23,8 +23,7 @@ export default {
   mounted() {
     console.log(this.orders_index_route);
     axios
-      .get("http://127.0.0.1:8000/orders/lists")
-      // .get(this.orders_index_route)
+      .get(this.orders_index_route + '/lists')
       .then(res => {
         console.log(res.data);
         document.getElementById("order_tbody").innerHTML = "";
@@ -33,7 +32,7 @@ export default {
         res.data.orders_lists.forEach(element => {
           text += "<tr><td>" + element["created_at"].substring(0, 10) + "</td>";
           text +=
-            '<td><a href="http://127.0.0.1:8000/orders/' +
+            '<td><a href="' + this.orders_index_route + "/"  +
             element["id"] +
             '" class="text-white">' +
             element["id"] +

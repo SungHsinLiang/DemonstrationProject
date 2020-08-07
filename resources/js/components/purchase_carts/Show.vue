@@ -443,11 +443,15 @@ export default {
 		submit_the_order() {
 			axios
 				.post(this.order_route, {
-					transport_method: this.picked
+					transport_method: this.picked,
+					_token: this.csrf
 				})
 				.then(res => {
 					// console.log(res.data["place_the_order_successfully_route"]);
-					window.location = res.data["place_the_order_successfully_route"];
+
+					// window.location = res.data["place_the_order_successfully_route"];
+					// console.log("success");
+					window.location = "http://128.199.229.169/orders/success";
 				})
 				.catch(err => {
 					if (err.response.data.message == "carts count less than 1") {
