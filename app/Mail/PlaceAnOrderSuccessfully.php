@@ -9,25 +9,25 @@ use Illuminate\Queue\SerializesModels;
 
 class PlaceAnOrderSuccessfully extends Mailable
 {
-    use Queueable, SerializesModels;
+  use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+  /**
+   * Create a new message instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+    //
+  }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
-    public function build()
-    {
-        return $this->markdown('emails.purchase_cart.place-an-order-successfully');
-    }
+  /**
+   * Build the message.
+   *
+   * @return $this
+   */
+  public function build()
+  {
+    return $this->markdown('emails.purchase_cart.place-an-order-successfully');
+  }
 }

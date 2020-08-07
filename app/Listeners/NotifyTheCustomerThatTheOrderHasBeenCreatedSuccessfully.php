@@ -3,10 +3,9 @@
 namespace App\Listeners;
 
 use App\Mail\PlaceAnOrderSuccessfully;
-use Illuminate\Support\Facades\mail;
-use App\Events\NewOrderHasCreatedEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Mail;
 
 class NotifyTheCustomerThatTheOrderHasBeenCreatedSuccessfully implements ShouldQueue
 {
@@ -23,10 +22,10 @@ class NotifyTheCustomerThatTheOrderHasBeenCreatedSuccessfully implements ShouldQ
   /**
    * Handle the event.
    *
-   * @param  NewOrderHasCreatedEvent  $event
+   * @param  object  $event
    * @return void
    */
-  public function handle(NewOrderHasCreatedEvent $event)
+  public function handle($event)
   {
     Mail::to($event->user->email)->send(new PlaceAnOrderSuccessfully());
   }

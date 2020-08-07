@@ -443,11 +443,13 @@ export default {
 		submit_the_order() {
 			axios
 				.post(this.order_route, {
-					transport_method: this.picked
+					transport_method: this.picked,
+					_token: this.csrf
 				})
 				.then(res => {
 					// console.log(res.data["place_the_order_successfully_route"]);
-					console.log(res.data);
+					console.log(res);
+					// console.log("success");
 					// window.location = res.data["place_the_order_successfully_route"];
 				})
 				.catch(err => {
