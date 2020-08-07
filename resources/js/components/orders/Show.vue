@@ -18,7 +18,7 @@
 
 <script>
 export default {
-	props: ["order_lists", "order_route"],
+	props: ["order_lists", "product_route"],
 	mounted() {
 		console.log("Component mounted.");
 		console.log(JSON.parse(this.order_lists));
@@ -34,7 +34,7 @@ export default {
 			text += "<tr><td>" + element["id"] + "</td>";
 			text +=
 				"<td><a href='" +
-				this.order_route +
+				this.product_route +
 				"/" +
 				element["id"] +
 				"'><img src=" +
@@ -42,7 +42,7 @@ export default {
 				" alt style='width: 40%' /></a></td>";
 			text +=
 				"<td><a href='" +
-				this.order_route +
+				this.product_route +
 				"/" +
 				element["id"] +
 				"' class='text-white'>" +
