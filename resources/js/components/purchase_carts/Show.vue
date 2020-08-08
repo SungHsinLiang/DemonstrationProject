@@ -447,10 +447,7 @@ export default {
 					_token: this.csrf
 				})
 				.then(res => {
-					// console.log(res.data["place_the_order_successfully_route"]);
-					// window.location = res.data["place_the_order_successfully_route"];
-					// console.log("success");
-					window.location = "http://128.199.229.169/orders/success";
+					window.location = res.data["place_the_order_successfully_route"];
 				})
 				.catch(err => {
 					if (err.response.data.message == "carts count less than 1") {
