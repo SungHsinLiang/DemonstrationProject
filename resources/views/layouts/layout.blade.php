@@ -2,35 +2,36 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-	<meta charset="utf-8">
-	{{-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
+  <meta charset="utf-8">
+  {{-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
 
-	<!-- CSRF Token -->
-	<meta name="csrf-token" content="{{ csrf_token() }}">
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-	<title>@yield('title', config('app.name'))</title>
+  <title>@yield('title', config('app.name'))</title>
 
-	<!-- Styles -->
-	<link href="{{ asset('css/main.css') }}" rel="stylesheet">
+  <!-- Styles -->
+  <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
-	<!-- Scripts -->
-	<script src="{{ asset('js/app.js') }}" defer></script>
+  <!-- Scripts -->
+  <script src="{{ asset('js/app.js') }}" defer></script>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
+  <!-- Google map -->
+  {{-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNiSnmDS-OsDEqtw13VAnfHG6Cn4Lxihw">
+  </script> --}}
 </head>
 
 <body>
-	<div id="app">
+  <div id="app">
+    @include('layouts.nav')
 
-		@include('layouts.nav')
+    @yield('main_content')
 
-		@yield('main_content')
+    @include('layouts.footer')
 
-		@include('layouts.footer')
-
-	</div>
+  </div>
 </body>
 
 </html>

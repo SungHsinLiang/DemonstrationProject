@@ -55,8 +55,6 @@ Route::resource('administrators', 'AdministratorsController');
 
 Route::resource('carousel', 'CarouselController');
 
-// use App\Mail\WelcomeNewUserMail;
+Route::resource('about_me', 'AboutMeController');
 
-Route::get('email', function () {
-  return new App\Mail\PlaceAnOrderSuccessfully();
-});
+Route::resource('news', 'NewsController');
