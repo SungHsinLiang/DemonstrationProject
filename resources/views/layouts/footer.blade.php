@@ -12,7 +12,7 @@
           <!-- Left Side Of Navbar -->
           <ul class="navbar-nav mr-auto text-center">
             <li class="nav-item">
-              <a class="nav-link mr-3" href="{{ route('about_me.index')}}">{{ __('text.Contact_me')}}</a>
+              <a class="nav-link mr-3" href="{{ route('about_me.index')}}">關於我</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('news.index')}}">{{ __('text.News')}}</a>

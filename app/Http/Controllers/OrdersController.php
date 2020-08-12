@@ -8,8 +8,8 @@ use App\PurchaseCart;
 use App\Events\NewOrderHasCreatedEvent;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\support\facades\DB;
-use Illuminate\Support\Facades\mail;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class OrdersController extends Controller
 {
@@ -98,11 +98,11 @@ class OrdersController extends Controller
     });
 
     // use an event to send an email to inform user that placing an order successfully.
-     event(new NewOrderHasCreatedEvent(auth()->user()));
+    event(new NewOrderHasCreatedEvent(auth()->user()));
 
     // user place an order successful
     // redirect user to show order list page
-   return [
+    return [
       'place_the_order_successfully_route' => route('orders.success'),
     ];
   }
