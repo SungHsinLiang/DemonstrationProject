@@ -6,6 +6,15 @@
 
 <div class="card my-5 col-8 p-0 mx-auto">
   <div class="card-header">
+    version：1.02
+  </div>
+  <div class="card-body">
+    新增可使用 Github、Google 或 Facebook 註冊或登入帳號
+  </div>
+</div>
+
+<div class="card my-5 col-8 p-0 mx-auto">
+  <div class="card-header">
     version：1.01
   </div>
   <div class="card-body">
