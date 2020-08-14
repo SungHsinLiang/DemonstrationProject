@@ -15,7 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
+Route::get('sign-in/github', 'Auth\LoginController@github')->name('login.github');
+Route::get('sign-in/github/redirect', 'Auth\LoginController@githubRedirect');
+Route::get('sign-in/google', 'Auth\LoginController@google')->name('login.google');;
+Route::get('sign-in/google/redirect', 'Auth\LoginController@googleRedirect');
+Route::get('sign-in/facebook', 'Auth\LoginController@facebook')->name('login.facebook');;
+Route::get('sign-in/facebook/redirect', 'Auth\LoginController@facebookRedirect');
 Auth::routes(['verify' => true]);
+
 
 Route::get('/', function () {
   $carousels = Carousel::get();
