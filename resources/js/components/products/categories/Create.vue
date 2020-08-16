@@ -1,6 +1,6 @@
 <template>
-	<div class="container bg-secondary py-2 my-3">
-		<div class="card col-md-10 my-5 mx-auto">
+	<div class="container py-2 my-3">
+		<div class="card col-md-10 my-5 mx-auto px-0">
 			<div class="card-header text-center">
 				新增商品類型
 			</div>

@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div class="container my-5">
 		<div class="err_message text-danger text-center my-3"></div>
 		<div class="card bg-light my-3 mx-auto d-black">
 			<!-- purchase list -->

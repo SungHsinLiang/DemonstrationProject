@@ -1,5 +1,5 @@
 <template>
-	<div class="container bg-secondary">
+	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-12 my-5">
 				<div class="card">
