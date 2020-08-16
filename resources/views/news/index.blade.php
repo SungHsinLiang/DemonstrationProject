@@ -6,6 +6,15 @@
 
 <div class="card my-5 col-8 p-0 mx-auto">
   <div class="card-header">
+    version：1.04
+  </div>
+  <div class="card-body">
+    調整頁面背景顏色
+  </div>
+</div>
+
+<div class="card my-5 col-8 p-0 mx-auto">
+  <div class="card-header">
     version：1.03
   </div>
   <div class="card-body">
