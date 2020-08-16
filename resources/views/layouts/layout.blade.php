@@ -11,6 +11,7 @@
   <title>@yield('title', config('app.name'))</title>
 
   <!-- Styles -->
+  <link rel="stylesheet" href="{{ asset('css/_reset.css') }} " />
   <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
   <!-- Scripts -->
